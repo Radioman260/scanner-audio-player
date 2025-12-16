@@ -1,0 +1,17 @@
+[Unit]
+Description=FFmpeg Network Audio Stream Player
+After=network.target
+
+[Service]
+Type=simple
+User=radioman
+ExecStart=/bin/bash /usr/local/bin/playstream.sh
+Restart=always
+RestartSec=3
+StartLimitBurst=5
+StartLimitIntervalSec=60
+StandardOutput=append:/home/radioman/vlc.log
+StandardError=append:/home/radioman/vlc.log
+
+[Install]
+WantedBy=multi-user.target
