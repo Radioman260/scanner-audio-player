@@ -34,3 +34,39 @@ git clone https://github.com/Radioman260/scanner-audio-player.git
 cd scanner-audio-player
 chmod +x install.sh
 ./install.sh
+
+## ⚙️ Configuration
+
+Open playstream.sh in a text editor:
+
+nano ~/scanner-audio-player/playstream.sh
+
+
+Find the line that contains the stream URL, e.g.:
+
+STREAM_URL="http://192.168.0.45:5000/stream"
+
+
+Replace it with your server’s IP and port, for example:
+
+STREAM_URL="http://YOUR_SERVER_IP:PORT/stream"
+
+
+Save the file (Ctrl+O in nano) and exit (Ctrl+X).
+
+Start the service (or reboot to start automatically):
+
+sudo systemctl start streamplayer.service
+
+
+To check status:
+
+sudo systemctl status streamplayer.service
+
+## 📝 Notes
+
+The systemd service automatically reconnects if the stream drops.
+
+Audio output defaults to the Raspberry Pi headphone jack.
+
+The script is designed to run reliably 24/7 on Raspberry Pi hardware.
