@@ -30,7 +30,7 @@ It was designed for **scanner radio feeds**, but works for any HTTP MP3 stream.
 ## 📦 Installation (One Command)
 
 ```bash
-git clone https://github.com/YOURNAME/scanner-audio-player.git
+git clone https://github.com/Radioman260/scanner-audio-player.git
 cd scanner-audio-player
 chmod +x install.sh
 ./install.sh
