@@ -1,0 +1,14 @@
+[Unit]
+Description=FFmpeg Network Audio Stream Player
+After=pulseaudio.service network-online.target
+
+[Service]
+Type=simple
+ExecStartPre=/bin/sleep 10
+ExecStartPre=/usr/bin/bluetoothctl connect 11:67:7E:F4:95:D3
+ExecStart=/bin/bash /usr/local/bin/playstream.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
